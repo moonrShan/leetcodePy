@@ -4,13 +4,19 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
+import collections
+from typing import Optional
+
+from Solution_102 import TreeNode
+
+
 class Solution_513:
     def findBottomLeftValue(self, root: Optional[TreeNode]) -> int:
-        queue = [root]
+        queue = collections.deque([root])
         while queue:
             candidate = queue[0].val
             for i in range(len(queue)):
-                root = queue.pop(0)
+                root = queue.popleft()
                 if (root.left):
                     queue.append(root.left)
                 if (root.right):
