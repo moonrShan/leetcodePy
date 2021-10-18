@@ -1,4 +1,4 @@
-class Solution:
+class Solution_239_2:
     def maxSlidingWindow(self, nums: List[int], k: int) -> List[int]:
         heap = []
         output = []
