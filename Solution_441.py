@@ -1,13 +1,13 @@
 class Solution_441:
     def arrangeCoins(self, n: int) -> int:
-        left = 0; right = n
-        while left <= right:
+        left = 0; right = n + 1
+        while left < right:
             mid = (left + right) // 2
             cost = (mid + 1) * mid // 2
-            if  cost == n:
+            if cost == n:
                 return mid
-            if cost < n:
+            elif cost < n:
                 left = mid + 1
             else:
-                right = mid - 1
+                right = mid
         return left - 1
