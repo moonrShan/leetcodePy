@@ -1,3 +1,6 @@
+from typing import List
+
+
 class Solution_131:
     def partition(self, s: str) -> List[List[str]]:
         res = []
