@@ -1,3 +1,6 @@
+import collections
+
+
 class Solution_239:
     def maxSlidingWindow(self, nums: List[int], k: int) -> List[int]:
         mx = collections.deque([0])

@@ -1,7 +1,11 @@
+from _ast import List
+from heapq import heappush, heappop
+
+
 class Solution_1353:
     def maxEvents(self, events: List[List[int]]) -> int:
         events.sort()
-        pq = [];
+        pq = []
         count = 0
         i, n = 0, len(events)
         d = 0

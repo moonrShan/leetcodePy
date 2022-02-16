@@ -1,12 +1,16 @@
+import collections
+
+
 class Solution_828:
-    def uniqueLetterString(self, S):
-        index = {c: [-1, -1] for c in string.ascii_uppercase}
-        res = 0
-        for i, c in enumerate(S):
-            k, j = index[c]
-            res += (i - j) * (j - k)
-            index[c] = [j, i]
-        for c in index:
-            k, j = index[c]
-            res += (len(S) - j) * (j - k)
-        return res % (10**9 + 7)
+    def uniqueLetterString(self, s: str) -> int:
+        c = collections.defaultdict(list)
+        for i, ch in enumerate(s):
+            c[ch].append(i)
+        result = 0
+        for pos in c.values():
+            pos = [-1] + pos + [len(s)]
+            for i in range(1, len(pos) - 1):
+                result += (pos[i] - pos[i - 1]) * (pos[i + 1] - pos[i])
+        return result
+
+
