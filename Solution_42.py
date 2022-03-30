@@ -1,6 +1,5 @@
 from typing import List
 
-
 class Solution_42:
     def trap(self, height: List[int]) -> int:
         stack = []
